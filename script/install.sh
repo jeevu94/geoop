@@ -13,5 +13,5 @@ python manage.py runserver
 echo "All done"
 
 # Windows firewall disable or add port
-# To Open port to the public world: Windows firewall in control panel add the port in advanced settings
+# To Open port to the public world: Windows firewall in control panel add the port in advanced settings | restart comp
 # REF: https://learn.microsoft.com/en-us/answers/questions/291348/can39t-open-ports-in-windows-10.html
