@@ -2,7 +2,7 @@
 
 script/python-3.11.0-amd64.exe /passive InstallAllUsers=1 PrependPath=1
 
-python3 -m venv venv
+python -m venv venv
 
 .\venv\Scripts\activate
 
