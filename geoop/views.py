@@ -7,11 +7,11 @@ from django.http import HttpResponse
 class TaskExecutor(View):
 
     def post(self, request, *args, **kwargs):
-        database = request.data.get("POSTGRES_DB", None)
-        user = request.data.get("POSTGRES_USER", None)
-        password = request.data.get("POSTGRES_PASSWORD", None)
-        host = request.data.get("POSTGRES_HOST", None)
-        port = request.data.get("POSTGRES_PORT", None)
+        database = request.POST.get("POSTGRES_DB", None)
+        user = request.POST.get("POSTGRES_USER", None)
+        password = request.POST.get("POSTGRES_PASSWORD", None)
+        host = request.POST.get("POSTGRES_HOST", None)
+        port = request.POST.get("POSTGRES_PORT", None)
         response_data = {}
         conn = None
 
@@ -30,18 +30,20 @@ class TaskExecutor(View):
                 cur = conn.cursor()
 
                 # execute a statement
-                print('PostgreSQL database version:')
-                cur.execute('SELECT version()')
+                print('Executing PostgreSQL')
+                cur.execute('SELECT count(*) FROM auth_user')
 
-                # display the PostgreSQL database server version
-                db_version = cur.fetchone()
-                print(db_version)
+                # display the results
+                res = cur.fetchone()
+                response_data["result"] = res
+                print(res)
 
                 # close the communication with the PostgreSQL
                 cur.close()
 
             except (Exception, psycopg2.DatabaseError) as error:
                 print(error)
+                response_data["error"] = error
             finally:
                 if conn is not None:
                     conn.close()
