@@ -77,15 +77,29 @@ WSGI_APPLICATION = 'geoop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": env.str("POSTGRES_DB", default=""),
+#         "USER": env.str("POSTGRES_USER", default=""),
+#         "PASSWORD": env.str("POSTGRES_PASSWORD", default=""),
+#         "HOST": env.str("POSTGRES_HOST", default=""),
+#         "PORT": env.str("POSTGRES_PORT", default=""),
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": env.str("POSTGRES_DB", default=""),
-        "USER": env.str("POSTGRES_USER", default=""),
-        "PASSWORD": env.str("POSTGRES_PASSWORD", default=""),
-        "HOST": env.str("POSTGRES_HOST", default=""),
-        "PORT": env.str("POSTGRES_PORT", default=""),
-    }
+    'default': {
+        'ENGINE': 'mssql',
+        'NAME': 'retailscan_new',
+        'USER': 'appuser',
+        'PASSWORD': 'DevGPRS@2020',
+        'HOST': '10.99.61.97',
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    },
 }
 
 
