@@ -34,16 +34,16 @@ class TaskExecutor(View):
                 cur.execute('SELECT count(*) FROM auth_user')
 
                 # display the results
-                res = cur.fetchone()
+                res = cur.fetchall()
                 response_data["result"] = res
                 print(res)
 
                 # close the communication with the PostgreSQL
                 cur.close()
 
-            except (Exception, psycopg2.DatabaseError) as error:
+            except Exception as error:
                 print(error)
-                response_data["error"] = error
+                response_data["error"] = f"{error}"
             finally:
                 if conn is not None:
                     conn.close()
