@@ -91,10 +91,10 @@ WSGI_APPLICATION = 'geoop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'retailscan_new',
-        'USER': 'appuser',
-        'PASSWORD': 'DevGPRS@2020',
-        'HOST': '10.99.61.97',
+        'NAME': 'master',
+        'USER': 'sa',
+        'PASSWORD': 'demo@123',
+        'HOST': 'WIN-BFNGJ2DKULB\SQLEXPRESS',
         'PORT': '',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
