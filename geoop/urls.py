@@ -19,12 +19,12 @@ from django.urls import path
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from geoop.views import TaskExecutor
+# from geoop.views import TaskExecutor
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', lambda request: HttpResponse("<h1>Hello World!</h1>"), name='home'),
-    path(
-        "api/execute/sql", csrf_exempt(TaskExecutor.as_view()), name="executor",
-    ),
+    # path(
+    #     "api/execute/sql", csrf_exempt(TaskExecutor.as_view()), name="executor",
+    # ),
 ]
