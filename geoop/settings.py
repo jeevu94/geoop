@@ -91,14 +91,13 @@ WSGI_APPLICATION = 'geoop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'master',
+        'NAME': 'temp_db',
         'USER': 'sa',
         'PASSWORD': 'demo@123',
-        'HOST': 'WIN-BFNGJ2DKULB\SQLEXPRESS',
-        'PORT': '',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-        },
+        #'HOST': 'WIN-BFNGJ2DKULB\SQLEXPRESS',
+        'HOST': '13.235.136.30',
+        'PORT': '1433',
+        'OPTIONS': {'driver': 'ODBC Driver 11 for SQL Server',}
     },
 }
 
