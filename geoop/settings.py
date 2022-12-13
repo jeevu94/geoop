@@ -24,7 +24,7 @@ env.read_env(str(BASE_DIR / ".env"))
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dhrjaljzg(l@pm2%yvdiv0lu$ah=#(#2cod=rlk9+)m!z3sr0r'
+SECRET_KEY = 'secret'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -93,9 +93,8 @@ DATABASES = {
         'ENGINE': 'mssql',
         'NAME': 'temp_db',
         'USER': 'sa',
-        'PASSWORD': 'demo@123',
-        #'HOST': 'WIN-BFNGJ2DKULB\SQLEXPRESS',
-        'HOST': '13.235.136.30',
+        'PASSWORD': 'password',
+        'HOST': 'host',
         'PORT': '1433',
         'OPTIONS': {'driver': 'ODBC Driver 11 for SQL Server',}
     },
